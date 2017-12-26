@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--
+    修改 MainPage 頁面繼承從 ContentPage 至 PlatformDefaultPaddingPage 時
+    
+    需修改主要 XAML Element 從 ContentPage 為 PlatformDefaultPaddingPage
+    因為預設命名空間並沒有自訂的物件
+    
+    需使用 local 前置詞設定 XAML Element
+    <local:PlatformDefaultPaddingPage ... />
+    
+    因為下列字串 xmlns:local="clr-namespace:XamarinApp" => local
+-->
+<local:PlatformDefaultPaddingPage 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:XamarinApp"
+    x:Class="XamarinApp.MainPage">
+
+    <StackLayout BackgroundColor="#eee"
+                 Padding="10">
+        <Label HorizontalTextAlignment="Center">
+            <Label.Text>
+若此文字與背景顏色在 iOS 裝置
+沒有覆蓋到上方內容
+代表設定成功
+                
+在 Android 裝置並沒有任何特殊效果
+            </Label.Text>
+        </Label>
+    </StackLayout>
+
+</local:PlatformDefaultPaddingPage>
